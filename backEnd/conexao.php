@@ -11,17 +11,12 @@ class Conexao
 
     public function __construct()
     {
-        try {
-            $this->pdo = new PDO("mysql:dbname=$this->dbName;host=$this->host;port=$this->port", $this->user, $this->pass);
-        } catch (Exception $e) {
-            $this->errorCode = $e->getCode();
-            error_log(date("d-m-Y H:i:s")." - Falha ao conectar com o banco, código: '" . $e->getCode() . "', Erro: '" . $e->getMessage() . "'.\n", 3, "C:\\xampp\PhpSiteEscolaErrorsLog.log");
-        }
+        $this->pdo = new PDO("mysql:dbname=$this->dbName;host=$this->host;port=$this->port", $this->user, $this->pass);
     }
     public function executar($sql, $fullObject = false, $autoExec = true)
     {
         $stmt = $this->pdo->prepare($sql);
-        if($autoExec || !$fullObject)
+        if ($autoExec || !$fullObject)
             $stmt->execute();
         if ($fullObject) {
             return $stmt;
