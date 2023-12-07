@@ -1,6 +1,6 @@
 <?php
-    include_once "../backEnd/conexao.php";
-    $db = new Conexao();
+include_once "../backEnd/conexao.php";
+$db = new Conexao();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -22,8 +22,8 @@
     </div>
     <div id="login">
         <h2>S N</h2>
-        <form action="../backEnd/processLogin.php" method="POST" name="formLogin">
-            <input type="text" id="cpfLog" name="User" placeholder="CPF" oninput="maskCPF('cpfLog')" required>
+        <form action="../backEnd/processLogin.php" method="POST">
+            <input type="text" id="cpfLog" name="user" placeholder="CPF" oninput="maskCPF('cpfLog')" required>
             <input type="password" name="senha" placeholder="Senha" required>
             <input class="btn" type="submit" value="Login">
             <span onclick="trocar(login,cadastro)">Cadastre-se</span>
@@ -31,13 +31,14 @@
     </div>
     <div style="display: none;" id="cadastro">
         <h2>S N</h2>
-        <form action="../backEnd/processCadastro.php" method="POST" name="formCadastro" onsubmit="return validateForm()" novalidate>
-            <input type="text" name="nome" placeholder="Nome">
-            <input type="text" id="cpfCad" name="cpf" placeholder="CPF" oninput="maskCPF('cpfCad')">
-            <input type="date" name="dtNasc" placeholder="Data de nascimento">
+        <form action="../backEnd/processCadastro.php" method="POST" onsubmit="return validateForm()" novalidate>
+            <input type="text" id="nome" name="nome" placeholder="Nome">
+            <input type="date" id="data" name="dtNascimento" placeholder="Data de nascimento">
             <input type="text" name="endereco" placeholder="Endereço">
+            <input type="text" id="cpfCad" name="cpf" placeholder="CPF" oninput="maskCPF('cpfCad')">
             <input type="text" id="telefone" name="telefone" placeholder="Telefone" oninput="maskTelefone(this)" maxlength="14" minlength="14">
-            <input type="password" name="senha" placeholder="Crie uma senha">
+            <input type="email" id="email" name="email" placeholder="E-mail">
+            <input type="password" id="senha" name="senha" placeholder="Senha">
             <select name="tipo" id="">
                 <option value="">Selecione um usuário</option>
                 <?php

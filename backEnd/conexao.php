@@ -1,12 +1,11 @@
 <?php
-// --- IMPORTANTE: Esse arquivo provavelmente será subistituido posteriormente.
 class Conexao
 {
     private $host = "localhost";
     private $port = "3306";
     private $user = "root";
     private $pass = "";
-    private $dbName = "escola_db";
+    private $dbName = "autoescola";
     private $pdo = null;
     public $errorCode = 0;
 
