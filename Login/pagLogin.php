@@ -63,6 +63,28 @@ $db = new Conexao();
             <input class="btn" type="submit" value="Cadastrar">
             <span onclick="trocar(cadastro,login)">Voltar</span>
         </form>
+        <div class="msgN">
+            <span id="nomeError">
+                <?php if (isset($nomeError)) {
+                    echo $nomeError;
+                } ?></span>
+
+            <span id="cpfError"><?php if (isset($cpfError)) {
+                                    echo $cpfError;
+                                } ?></span>
+
+            <span id="dtError"><?php if (isset($dtError)) {
+                                    echo $dtError;
+                                } ?></span>
+
+            <span id="emailError"><?php if (isset($emailError)) {
+                                        echo $emailError;
+                                    } ?></span>
+
+            <span id="passwordError"><?php if (isset($passwordError)) {
+                                            echo $passwordError;
+                                        } ?></span>
+        </div>
     </div>
     <script src="../index.js"></script>
 </body>
