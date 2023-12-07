@@ -27,6 +27,16 @@ $db = new Conexao();
             <input type="password" name="senha" placeholder="Senha" required>
             <input class="btn" type="submit" value="Login">
             <span onclick="trocar(login,cadastro)">Cadastre-se</span>
+            <span>
+                <?php
+                if (isset($_GET['loginFailed'])) {
+                    echo "<p>Cpf ou senha incorretos, tente novamente</p>";
+                }
+                if (isset($_GET['cadSucess'])) {
+                    echo "<p>Cadastro realizado com sucesso</p>";
+                }
+                ?>
+            </span>
         </form>
     </div>
     <div style="display: none;" id="cadastro">
