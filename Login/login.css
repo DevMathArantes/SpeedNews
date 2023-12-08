@@ -61,6 +61,16 @@ h2{
 #cadastro input{
     width: 45%;
 }
+select{
+    width: 45%;
+    margin: 2%;
+    background-color: black;
+    border: 2px solid #ffd000;
+    color: #ffd000;
+    padding: 2%;
+    border-radius: 10px;
+    font-size: 15px;
+}
 form{
     width: 60%;
     text-align: center;

@@ -60,7 +60,7 @@ $db = new Conexao();
                 }
                 ?>
             </select>
-            <input class="btn" type="submit" value="Cadastrar">
+            <input class="btn" type="submit" value="Cadastrar"><br>
             <span onclick="trocar(cadastro,login)">Voltar</span>
         </form>
         <div class="msgN">
