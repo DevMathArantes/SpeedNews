@@ -20,24 +20,28 @@
             <span>Marca</span>
             <span>Modelo</span>
             <span>Placa</span>
-            <span class="excluir"></span>
+            <span class="excluir">Editar</span>
+            <span class="excluir">Excluir</span>
         </p>
         <p>
             <span>Velorian</span>
             <span>2000</span>
             <span>20202020</span>
+            <span class="excluir">Editar</span>
             <span class="excluir">Excluir</span>
         </p>
         <p>
             <span>Cavalo</span>
             <span>Preto</span>
             <span>20202020</span>
+            <span class="excluir">Editar</span>
             <span class="excluir">Excluir</span>
         </p>
         <p>
             <span>Fusca</span>
             <span>preto</span>
             <span>20202020</span>
+            <span class="excluir">Editar</span>
             <span class="excluir">Excluir</span>
         </p>
     </div><br>
