@@ -32,7 +32,7 @@ if (isset($_SESSION['idUser'])) {
                 <span>Aluno</span>
                 <span>Veículo</span>
                 <span>Horário</span>
-                <span class="excluir"></span>
+                <span class="excluir">Desmarcar</span>
             </p>
             <?php
             $result = $db->executar("SELECT a.id as id, DATE_FORMAT(a.data_aula, '%d/%m/%Y') as data_aula, a.horario_aula as horario_aula, c.modelo as modelo, u.nome as nome FROM agendamentos as a JOIN carros as c ON c.id = a.carro_id JOIN usuarios as u ON u.id = a.Instrutor_id WHERE a.Instrutor_id = $idUser", true);
@@ -42,7 +42,7 @@ if (isset($_SESSION['idUser'])) {
                     <span><?= $i['nome'] ?></span>
                     <span><?= $i['modelo'] ?></span>
                     <span><?= $i['data_aula'] . " " . $i['horario_aula'] ?></span>
-                    <a href="../../backEnd/professor/removerAgendamento.php?idAgend=<?= $i['id']; ?>"><span class="excluir">Desmarcar</span></a>
+                    <a href="../../backEnd/professor/removerAgendamento.php?idAgend=<?= $i['id']; ?>"><span style="color:black;text-decoration:underline #ffd000;background-color: #ffd000;padding:10%;border-radius:5px;">Desmarcar</span></a>
                 </p>
             <?php
             }

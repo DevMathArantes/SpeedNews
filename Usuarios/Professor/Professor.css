@@ -35,3 +35,7 @@ input,select{
     width: 100%;
     margin: 1%;
 }
+#cadVei input{
+    width: 46%;
+    margin: 1%;
+}
