@@ -6,6 +6,7 @@ if (isset($_GET['idCarro'])) {
     $result = $db->executar("SELECT * FROM agendamentos WHERE carro_id = '$idCarro'", true);
     if ($result->rowCount() > 0) {
         header("location: ../../Usuarios/Professor/homeProfessor.php?removeFailed");
+        exit();
     } else {
         $result = $db->executar("SELECT * FROM log_instrutores_carros WHERE carro_id = '$idCarro'", true);
         if ($result->rowCount() > 0) {
@@ -16,6 +17,7 @@ if (isset($_GET['idCarro'])) {
     $result = $db->executar("SELECT * FROM carros WHERE id = '$idCarro'", true);
         if ($result->rowCount() == 0) {
             header("location: ../../Usuarios/Professor/homeProfessor.php?sucess");
+            exit();
         }
     
 }

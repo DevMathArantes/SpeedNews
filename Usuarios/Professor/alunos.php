@@ -24,14 +24,14 @@ $db = new Conexao();
             <span class="excluir"></span>
         </p>
         <?php
-        $result = $db->executar("SELECT nome,  data_nascimento, TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) AS idade, cpf FROM usuarios WHERE tipo = 3");
+        $result = $db->executar("SELECT id, nome, data_nascimento, TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) AS idade, cpf FROM usuarios WHERE tipo = 3");
         foreach ($result as $i) {
         ?>
             <p>
                 <span><?= $i['nome']; ?></span>
                 <span><?= $i['idade']; ?></span>
                 <span><?= $i['cpf']; ?></span>
-                <a href=""><span class="excluir">Excluir</span></a>
+                <a href="../../backEnd/professor/removerAluno.php?idAluno=<?=$i['id'];?>"><span class="excluir">Excluir</span></a>
             </p>
         <?php
         }

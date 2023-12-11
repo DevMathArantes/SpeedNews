@@ -54,6 +54,14 @@ if (isset($_SESSION['idUser'])) {
                 echo "<p>";
                 echo "<span>Veículo cadastrado com sucesso</span>";
             }
+            if(isset($_GET['delAlunoFailed'])){
+                echo "<p>";
+                echo "<span>Não foi possível excluir o aluno</span>";
+            }
+            if(isset($_GET['delAlunoSucess'])){
+                echo "<p>";
+                echo "<span>Aluno excluido com sucesso!</span>";
+            }
             ?>
         </div>
     </div>
