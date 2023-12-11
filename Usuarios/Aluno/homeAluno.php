@@ -11,7 +11,8 @@
     <div class="topHome">
         <h1>Olá, seja bem vindo</h1>
     </div><br><br>
-    <a href="../../Login/pagLogin.php">Voltar</a><br>
+    <a href="../../Login/pagLogin.php">Voltar</a>
+    <a href="edtAluno.php">Editar perfil</a>
         <h2>Agendar horário</h2>
         <form>
             <select name="" id="">
