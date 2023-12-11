@@ -87,7 +87,7 @@ if (isset($_POST['data']) && isset($_POST['veiculo'])) {
             <span class="excluir"></span>
         </p>
         <?php
-        $result = $db->executar("SELECT a.id, DATE_FORMAT(a.data_aula, '%d/%m/%Y') AS data_aula, a.horario_aula, c.modelo, c.placa, vi.nome FROM agendamentos AS a JOIN carros AS c ON a.carro_id = c.id JOIN view_instrutores AS vi ON a.Instrutor_id = vi.id WHERE a.aluno_id = '$idUser'", true);
+        $result = $db->executar("SELECT a.id, DATE_FORMAT(a.data_aula, '%d/%m/%Y') AS data_aula, a.horario_aula, c.modelo, c.placa, u.nome FROM agendamentos AS a JOIN carros AS c ON a.carro_id = c.id JOIN usuarios AS u ON a.Instrutor_id = u.id WHERE a.aluno_id = '$idUser'", true);
         if ($result->rowCount() == 0) {
             echo '
         <p>Não há horários marcados para você </p>';
