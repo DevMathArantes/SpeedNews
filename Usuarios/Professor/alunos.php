@@ -1,5 +1,11 @@
+<?php
+include_once "../../backEnd/conexao.php";
+session_start();
+$db = new Conexao();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +13,7 @@
     <link rel="stylesheet" href="Professor.css">
     <link rel="stylesheet" href="../../index.css">
 </head>
+
 <body>
     <a href="homeProfessor.php">Voltar</a>
     <div class="cadastrados">
@@ -16,24 +23,20 @@
             <span>CPF</span>
             <span class="excluir"></span>
         </p>
-        <p>
-            <span>Ricardin</span>
-            <span>8000</span>
-            <span>20202020</span>
-            <span class="excluir">Excluir</span>
-        </p>
-        <p>
-            <span>Ricardin</span>
-            <span>8000</span>
-            <span>20202020</span>
-            <span class="excluir">Excluir</span>
-        </p>
-        <p>
-            <span>Ricardin</span>
-            <span>8000</span>
-            <span>20202020</span>
-            <span class="excluir">Excluir</span>
-        </p>
+        <?php
+        $result = $db->executar("SELECT nome,  data_nascimento, TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) AS idade, cpf FROM usuarios WHERE tipo = 3");
+        foreach ($result as $i) {
+        ?>
+            <p>
+                <span><?= $i['nome']; ?></span>
+                <span><?= $i['idade']; ?></span>
+                <span><?= $i['cpf']; ?></span>
+                <a href=""><span class="excluir">Excluir</span></a>
+            </p>
+        <?php
+        }
+        ?>
     </div><br>
 </body>
+
 </html>
