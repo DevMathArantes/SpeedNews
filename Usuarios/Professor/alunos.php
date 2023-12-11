@@ -21,7 +21,7 @@ $db = new Conexao();
             <span>Nome</span>
             <span>Idade</span>
             <span>CPF</span>
-            <span class="excluir"></span>
+            <span class="excluir">Excluir</span>
         </p>
         <?php
         $result = $db->executar("SELECT id, nome, data_nascimento, TIMESTAMPDIFF(YEAR, data_nascimento, CURDATE()) AS idade, cpf FROM usuarios WHERE tipo = 3");
