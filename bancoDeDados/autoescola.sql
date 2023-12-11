@@ -11,6 +11,12 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Banco de dados: `autoescola`
 --
@@ -95,16 +101,16 @@ CREATE TABLE `usuarios` (
   `telefone` varchar(15) NOT NULL,
   `email` varchar(50) NOT NULL,
   `senha` varchar(60) NOT NULL,
-  `tipo` int(1) NOT NULL,
+  `tipo` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `data_nascimento`, `endereco`, `telefone`, `email`, `senha`, `tipo`, `validado`) VALUES
-(1, 'Instrutor', '000.000.000-00', '0000-00-00', 'Rua Fulano de Tal', '(34)00000-0000', 'Instrutor@gmail.com', '123456789', 2, 1),
-(2, 'Aluno', '111.111.111-11', '0000-00-00', 'Rua Fulano de Tal', '(34)00000-0000', 'aluno@gmail.com', '123456789', 3, 1);
+INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `data_nascimento`, `endereco`, `telefone`, `email`, `senha`, `tipo`) VALUES
+(1, 'Instrutor', '000.000.000-00', '0000-00-00', 'Rua Fulano de Tal', '(34)00000-0000', 'Instrutor@gmail.com', '123456789', 2),
+(2, 'Aluno', '111.111.111-11', '0000-00-00', 'Rua Fulano de Tal', '(34)00000-0000', 'aluno@gmail.com', '123456789', 3);
 
 
 -- --------------------------------------------------------
