@@ -12,8 +12,8 @@
 
 <body>
     <h1>Editar meu perfil</h1><br><br>
-    <a href="homeAluno.php">Voltar</a>
-    <form action="../../backEnd/alterarInformacoes.php?editarUsuario" method="POST">
+    <a href="homeAluno.php">Voltar</a><br><br><br>
+    <form id="fr" action="../../backEnd/alterarInformacoes.php?editarUsuario" method="POST">
         <input type="text" name="endereco" placeholder="Alterar endereço" required>
         <input type="text" id="telefone" name="telefone" placeholder="Telefone" oninput="maskTelefone(this)" maxlength="14" minlength="14" required>
         <input type="email" name="email" placeholder="Alterar e-mail" required>

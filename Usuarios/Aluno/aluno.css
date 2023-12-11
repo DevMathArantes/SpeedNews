@@ -49,3 +49,12 @@ h1{
     background-color: black;
     color: #f8ed8d;
 }
+#formEdit input{
+    margin: 1%;
+}
+#cada{
+    width: 100%;
+}
+#fr input{
+    margin: 1%;
+}

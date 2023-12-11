@@ -26,7 +26,7 @@ if (isset($_GET['idCarro'])) {
 
 <body>
     <h1>Editar meu veículo</h1><br><br>
-    <a href="homeProfessor.php">Voltar</a>
+    <a href="homeProfessor.php">Voltar</a><br><br><br>
     <form id="formEdit" action="../../backEnd/professor/editarCarro.php?editarCarro" method="POST">
         <input type="text" name="id" value="<?= $idCarro ?>" readonly>
         <input type="text" name="marca" value="<?= $marca ?>" required>
