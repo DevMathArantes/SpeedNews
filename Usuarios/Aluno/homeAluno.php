@@ -76,8 +76,23 @@ if (isset($_POST['data']) && isset($_POST['veiculo'])) {
     <div class="topHome">
         <h1>Olá, seja bem vindo</h1>
     </div><br><br>
+<<<<<<< HEAD
     <a href="../../backEnd/logout.php">Sair</a><br>
 
+=======
+    <a href="../../Login/pagLogin.php">Voltar</a>
+    <a href="edtAluno.php">Editar perfil</a>
+        <h2>Agendar horário</h2>
+        <form>
+            <select name="" id="">
+                <option value="">Selecione um veículo</option>
+                <option value="">Camaro</option>
+                <option value="">Cavalo</option>
+            </select>
+            <input type="date">
+            <input id="btn" type="submit" value="Procurar">
+        </form>
+>>>>>>> b68d711d3c50409e19d68b27dad8302c6bb23745
     <div class="cadastrados">
         <p id="titulos">
             <span>Data</span>
