@@ -42,7 +42,7 @@ if (isset($_SESSION['idUser'])) {
                     <span><?= $i['nome'] ?></span>
                     <span><?= $i['modelo'] ?></span>
                     <span><?= $i['data_aula'] . " " . $i['horario_aula'] ?></span>
-                    <a href="../../backEnd/professor/removerAgendamento.php?idAgend=<?= $i['id']; ?>"><span class="excluir">Desmarcar</span></a>
+                    <a href="../../backEnd/professor/removerAgendamento.php?idAgend=<?= $i['id']; ?>"><span style="color:black;text-decoration:underline #ffd000;background-color: #ffd000;padding:10%;border-radius:5px;">Desmarcar</span></a>
                 </p>
             <?php
             }
