@@ -34,27 +34,26 @@ $idUser = $_SESSION['idUser'];
             <span class="excluir">Editar</span>
             <span class="excluir">Excluir</span>
         </p>
-        <p>
-            <span>Velorian</span>
-            <span>2000</span>
-            <span>20202020</span>
-            <span class="excluir">Editar</span>
-            <span class="excluir">Excluir</span>
-        </p>
-        <p>
-            <span>Cavalo</span>
-            <span>Preto</span>
-            <span>20202020</span>
-            <span class="excluir">Editar</span>
-            <span class="excluir">Excluir</span>
-        </p>
-        <p>
-            <span>Fusca</span>
-            <span>preto</span>
-            <span>20202020</span>
-            <span class="excluir">Editar</span>
-            <span class="excluir">Excluir</span>
-        </p>
+        <?php
+        $result = $db->executar("SELECT id, marca, modelo, ano, capacidade_passageiros AS capacidade, placa FROM carros", true);
+        if ($result->rowCount() > 0) {
+            $result = $result->fetchAll();
+            foreach ($result as $i) {
+        ?>
+                <p>
+                    <span><?= $i['marca'] ?></span>
+                    <span><?= $i['modelo'] ?></span>
+                    <span><?= $i['ano'] ?></span>
+                    <span><?= $i['placa'] ?></span>
+                    <a href="edtVeiculo.php?idCarro=<?= $i['id']; ?>"><span class="excluir">Editar</span></a>
+                    <a href="../../backEnd/professor/removerCarro.php?idCarro=<?= $i['id']; ?>"><span class="excluir">Excluir</span></a>
+                </p>
+        <?php
+            }
+        } else {
+            echo "<p>Não há veículos cadastrados</p>";
+        }
+        ?>
     </div><br>
 </body>
 

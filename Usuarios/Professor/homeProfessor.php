@@ -62,6 +62,14 @@ if (isset($_SESSION['idUser'])) {
                 echo "<p>";
                 echo "<span>Aluno excluido com sucesso!</span>";
             }
+            if(isset($_GET['editCarSucess'])){
+                echo "<p>";
+                echo "<span>Informações do veículo alteradas com sucesso!</span>";
+            }
+            if(isset($_GET['editCarFailed'])){
+                echo "<p>";
+                echo "<span>Não foi possível alterar as informações do veículo!!</span>";
+            }
             ?>
         </div>
     </div>
