@@ -76,6 +76,10 @@ if (isset($_POST['data']) && isset($_POST['veiculo'])) {
     <div class="topHome">
         <h1>Olá, seja bem vindo</h1>
     </div><br><br>
+<<<<<<< HEAD
+    <a href="../../backEnd/logout.php">Sair</a><br>
+
+=======
     <a href="../../Login/pagLogin.php">Voltar</a>
     <a href="edtAluno.php">Editar perfil</a>
         <h2>Agendar horário</h2>
@@ -88,6 +92,7 @@ if (isset($_POST['data']) && isset($_POST['veiculo'])) {
             <input type="date">
             <input id="btn" type="submit" value="Procurar">
         </form>
+>>>>>>> b68d711d3c50409e19d68b27dad8302c6bb23745
     <div class="cadastrados">
         <p id="titulos">
             <span>Data</span>
@@ -114,7 +119,7 @@ if (isset($_POST['data']) && isset($_POST['veiculo'])) {
                 echo "<span>$modeloCarro</span>";
                 echo "<span>$nomeProfessor</span>";
                 //echo "<a href='../backEnd/processRemoverAgendamento.php?idAgendamento=$idAgendamento'><button>X</button></a>";
-                echo "<a href='../../backEnd/removerAgendamento.php?idAgend=$idAgendamento'><button>X</button></a>";
+                echo "<a href='../../backEnd/aluno/removerAgendamento.php?idAgend=$idAgendamento'><button>X</button></a>";
                 echo "</p>";
             }
         }
@@ -147,7 +152,7 @@ if (isset($_POST['data']) && isset($_POST['veiculo'])) {
                 echo "<p>Fechado</p>";
             } else {
                 foreach ($horariosDisponiveis as $horario) {
-                    echo "<i><a href='../../backEnd/lancarAgendamento.php?horario=$horario&dtEscolhida=$dataEscolhida&veicEscolhido=$veiculoEscolhido'>$horario</a></i>";
+                    echo "<i><a href='../../backEnd/aluno/lancarAgendamento.php?horario=$horario&dtEscolhida=$dataEscolhida&veicEscolhido=$veiculoEscolhido'>$horario</a></i>";
                 }
             }
             ?>
