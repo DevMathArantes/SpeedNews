@@ -1,17 +1,32 @@
 <?php
-//Pode resceber um get "redirect" para uma url personalizada após deslogar, se omitido padrão é a tela de login.
-function destroySession()
-{
-    unset($_SESSION); //remove todas as variáveis da sessão
-    session_destroy(); // destroi a sessão
-}
 function logout()
 {
-    //Sair do usuario (deslogar)
-    destroySession();
-}
-logout();
-if (!isset($_GET["redirect"]) || $_GET["redirect"] == "")
+    // Inicia a sessão, se não estiver iniciada
+    session_start();
+
+    // Destroi todas as variáveis de sessão
+    $_SESSION = array();
+
+    // Se você deseja destruir completamente a sessão, apague também o cookie de sessão
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
+        );
+    }
+
+    // Destroi a sessão
+    session_destroy();
+
+    // Redireciona para a página de login
     header("Location: ../Login/pagLogin.php");
-else
-    header("Location: " . $_GET["redirect"]);
+    exit();
+}
+
+logout();

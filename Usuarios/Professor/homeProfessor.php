@@ -4,6 +4,9 @@ session_start();
 $db = new Conexao();
 if (isset($_SESSION['idUser'])) {
     $idUser = $_SESSION['idUser'];
+}elseif(!isset($_SESSION['idUser'])){
+    header("Location: ../../Login/pagLogin.php");
+    exit();
 }
 ?>
 <!DOCTYPE html>
